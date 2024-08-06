@@ -13,12 +13,9 @@
 
 -  将sing-box目录上传到pfSense或OPNsense的root目录下。
 
--  进入目录:
+-  进入目录，运行安装脚本，OPNsense防火墙运行op_install.sh脚本，pfSesne防火墙运行pf_install.sh脚本。
 ```bash
 cd sing-box
-```   
--  运行安装脚本，OPNsense防火墙运行op_install.sh脚本，pfSesne防火墙运行pf_install.sh脚本。
-```bash
 sh op_install.sh
 ```
 -  启动sing-box:
@@ -33,11 +30,12 @@ service sing-box stop
 ```bash
 service sing-box restart
 ```
--  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要):
+-  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要)。
 ```bash
 service sing-box start
 ```
 <br>
+
 ## 透明代理
 
 透明代理设置，请参阅[pfSense、OPNsense设置Clash透明代理](https://pfchina.org/?p=10526)。
