@@ -2,7 +2,7 @@
 
 ##############  sing-box安装脚本  #################
 echo -e ''
-echo -e "\033[32m====== sing-box for OPNsense一键安装脚本 ======\033[0m"
+echo -e "\033[32m====== sing-box for pfSense and OPNsense一键安装脚本 ======\033[0m"
 echo -e ''
 
 #  设定目录变量
