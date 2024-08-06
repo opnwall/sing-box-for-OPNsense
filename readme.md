@@ -6,7 +6,7 @@
 
 - 由于sing-box在freeBSD平台不提供tun支持，建议使用http或socks协议进行代理配置。
 
-- 本项目同时支持在pfSesne防火墙上安装使用。
+- 本项目同时支持在pfSesne防火墙安装使用。
 
 <br>
 
