@@ -1,0 +1,40 @@
+#!/bin/sh
+ 
+# PROVIDE: sing-box
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+ 
+. /etc/rc.subr
+ 
+name="singbox"
+rcvar=singbox_enable
+ 
+load_rc_config $name
+ 
+: ${singbox_enable:="NO"}
+: ${singbox_config:="/usr/local/etc/sing-box/config.json"}
+: ${singbox_command:="/usr/local/bin/sing-box"}
+ 
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+ 
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${stop_cmd}; ${start_cmd}"
+ 
+singbox_start()
+{
+    echo "Starting sing-box!"
+    ${singbox_command} run -c ${singbox_config} > ${logfile} 2>&1 &
+    echo $! > ${pidfile}
+}
+ 
+singbox_stop()
+{
+    echo "Stopping sing-box!"
+#   kill `cat ${pidfile}`
+    rm -f ${pidfile}
+}
+ 
+run_rc_command "$1"
+
