@@ -33,7 +33,8 @@ service sing-box start
 -  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要):
 ```bash
 service sing-box start
-``` <br>
+```
+<br>
 
 ## 透明代理
 
