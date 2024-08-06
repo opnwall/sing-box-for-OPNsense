@@ -19,7 +19,8 @@
 -  进入目录，运行安装脚本，OPNsense防火墙运行op_install.sh脚本，pfSesne防火墙运行pf_install.sh脚本。
 ```bash
 cd sing-box
-sh op_install.sh
+sh op_install.sh 或
+sh pf_install.sh
 ```
 -  启动sing-box:
 ```bash
