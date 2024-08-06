@@ -1,12 +1,10 @@
 #  sing-box for pfSense and OPNsense
 
-
 # 项目介绍
 
 此项目是通过使用开源项目[sing-box](https://github.com/SagerNet/sing-box) 作为核心程序，再结合脚本实现简单的代理功能。
 
 由于sing-box在freeBSD平台不提供tun支持，建议使用http或socks来实现代理。
-
 <br>
 
 ## 使用方法
@@ -21,23 +19,21 @@
 ```   
 -  执行安装脚本(pfSense用pf_install.sh,OPNsense用op_install.sh安装脚本):
 ```bash
- sh pf_install.sh 或 sh op_install.sh
+sh pf_install.sh
 ```      
 -  启动sing-box:
 ```bash
-   service sing-box start
+service sing-box start
 ```      
--  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不用添加，开机自动启动):
+-  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要):
 ```bash
- service sing-box start
-``` 
-   
+service sing-box start
+```    
 <br>
 
 ## 透明代理
 
 透明代理设置，请参阅[pfSense、OPNsense设置Clash透明代理](https://pfchina.org/?p=10526)。
-
 <br>
 
 ## Clash仪表盘
