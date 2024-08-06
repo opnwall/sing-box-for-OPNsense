@@ -17,25 +17,27 @@
 ```bash
 cd sing-box
 ```   
--  运行安装脚本:
-  pfSesne防火墙，运行以下命令：
-```bash
-sh pf_install.sh
-```
-OPNsense防火墙，运行以下命令：
+-  运行安装脚本，OPNsense防火墙运行op_install.sh脚本，pfSesne防火墙运行pf_install.sh脚本。
 ```bash
 sh op_install.sh
-```  
+```
 -  启动sing-box:
 ```bash
 service sing-box start
-```      
+```
+-  停止sing-box:
+```bash
+service sing-box stop
+```
+-  重启sing-box:
+```bash
+service sing-box restart
+```
 -  添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要):
 ```bash
 service sing-box start
 ```
 <br>
-
 ## 透明代理
 
 透明代理设置，请参阅[pfSense、OPNsense设置Clash透明代理](https://pfchina.org/?p=10526)。
@@ -45,7 +47,7 @@ service sing-box start
 
 - 访问Clash仪表盘
 
-配置文件包含了clash api的功能，那么在启动sing-box后，即可访问clash仪表盘，例如：http://192.168.0.1:9090/ui
+配置文件如果包含clash api的功能，那么在启动sing-box后，即可访问clash仪表盘，例如：http://192.168.0.1:9090/ui
 
 - 登录管理界面
 
