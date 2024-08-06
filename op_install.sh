@@ -26,12 +26,6 @@ chmod +x /usr/local/bin/sing-box
 chmod +x /usr/local/etc/rc.d/sing-box
 echo -e '执行权限添加完成！'
 
-#  添加开机启动脚本（OPNsense）
-cat>/usr/local/etc/rc.syshook.d/start/30-sing-box<<EOF
-service sing-box start
-EOF
-chmod +x /usr/local/etc/rc.syshook.d/start/30-sing-box
-echo -e '开机脚本添加完成！'
 echo -e ''
 echo -e "\033[32msing-box安装完成！\033[0m"
 
