@@ -16,11 +16,10 @@
 
 - 将sing-box目录上传到pfSense或OPNsense的root目录下。
 
-- 进入目录，运行安装脚本，OPNsense防火墙运行op_install.sh脚本，pfSesne防火墙运行pf_install.sh脚本。
+- 进入目录，运行安装脚本。
 ```bash
 cd sing-box
-sh op_install.sh 或
-sh pf_install.sh
+sh install.sh
 ```
 - 启动sing-box:
 ```bash
@@ -34,7 +33,7 @@ service sing-box stop
 ```bash
 service sing-box restart
 ```
-- 添加开机启动脚本：pfSense安装shellcmd插件，添加开机启动shellcmd命令(OPNsense不需要)。
+- 开机自启，pfSense安装shellcmd插件，添加开机启动shellcmd命令，OPNsense不需要设置。
 ```bash
 service sing-box start
 ```
