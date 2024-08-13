@@ -11,6 +11,9 @@ root=/usr/local
 #  创建目录
 mkdir -p $root/etc/sing-box/
 
+#  解压缩
+unzip sing-box.zip
+
 #  移动文件
 cp sing-box $root/bin/
 cp config.json $root/etc/sing-box/
