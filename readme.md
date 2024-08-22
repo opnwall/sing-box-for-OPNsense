@@ -12,7 +12,7 @@
 
 ## 使用方法
 
-- 修改config.json文件，输入自己的节点信息和代理接口地址。
+- 编辑config.json文件，修改出站信息和代理接口地址。
 
 - 将sing-box目录上传到pfSense或OPNsense的root目录下。
 
