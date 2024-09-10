@@ -8,14 +8,14 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
       "external_ui": "/usr/local/etc/sing-box/ui",
-      "external_ui_download_url": "",
-      "external_ui_download_detour": "",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "select",
       "secret": "123456",
-      "default_mode": "Rule"
+      "default_mode": "rule"
        },
       "cache_file": {
             "enabled": true,
-            "path": "cache.db",
+            "path": "/usr/local/etc/sing-box/cache.db",
             "store_fakeip": true
         }
     },
@@ -23,7 +23,7 @@
         "servers": [
             {
                 "tag": "proxydns",
-                "address": "https://8.8.8.8/dns-query",             
+                "address": "tls://8.8.8.8/dns-query",
                 "detour": "select"
             },
             {
@@ -84,17 +84,15 @@
           "type": "http",       
 	  	  "tag": "http-in",			
           "domain_strategy": "prefer_ipv4",
-          "listen": "192.168.10.1",
-          "listen_port": 8080,
-          "users": []
+          "listen": "192.168.101.248",
+          "listen_port": 8080
         },
 	    {		   
           "type": "socks",
           "tag": "socks-in",		   
           "domain_strategy": "prefer_ipv4",
-          "listen": "192.168.10.1",
-          "listen_port": 1080,
-          "users": []
+          "listen": "192.168.101.248",
+          "listen_port": 1080
         }
   ],
   "outbounds": [
@@ -103,19 +101,28 @@
       "type": "selector",
       "default": "auto",
       "outbounds": [
-        "auto",		
-        "vless_1",
-        "vmess_1",	
-        "hysteria2_1",
-        "tuic_1"		
+        "auto",
+        "RN-vless",
+        "RN-ws",
+        "RN-hy2",
+        "RN-tuic5",
+        "CD-vless",
+        "CD-ws",
+        "CD-hy2",
+        "CD-tuic5",
+        "BW-vless",
+        "BW-ws",
+        "BW-hy2",
+        "BW-tuic5"		
       ]
     },
     {
       "type": "vless",
-      "tag": "vless_1",
+      "tag": "RN-vless",
       "server": "88.88.88.88",
       "server_port": 2443,
-      "uuid": "9b779d79-7091-40bc-bf76-0afa26635e89",
+      "uuid": "34c18fad-ec2f-4e75-aea6-d78e6d45a550",
+      "packet_encoding": "xudp",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -126,15 +133,15 @@
         },
       "reality": {
           "enabled": true,
-          "public_key": "5ZLk-jC9Dm-71QCvShokxkLToMFs6HguU3Hf2E0Xhhc",
-          "short_id": "685d35c5"
+          "public_key": "f1qn-AHx1S35vIjCgVqjad9Yc45RDXfn7bCTRF5koSU",
+          "short_id": "96770c21"
         }
       }
     },
 {
             "server": "88.88.88.88",
             "server_port": 3443,
-            "tag": "vmess_1",
+            "tag": "RN-ws",
             "tls": {
                 "enabled": false,
                 "server_name": "www.bing.com",
@@ -144,25 +151,27 @@
                     "fingerprint": "chrome"
                 }
             },
+            "packet_encoding": "packetaddr",
             "transport": {
                 "headers": {
                     "Host": [
                         "www.bing.com"
                     ]
                 },
-                "path": "9b779d79-7091-40bc-bf76-0afa26635e89-vm",
+                "path": "34c18fad-ec2f-4e75-aea6-d78e6d45a550-vm",
                 "type": "ws"
             },
             "type": "vmess",
             "security": "auto",
-            "uuid": "9b779d79-7091-40bc-bf76-0afa26635e89"
+            "uuid": "34c18fad-ec2f-4e75-aea6-d78e6d45a550"
         },
+
     {
         "type": "hysteria2",
-        "tag": "hysteria2_1",
+        "tag": "RN-hy2",
         "server": "88.88.88.88",
         "server_port": 9443,
-        "password": "9b779d79-7091-40bc-bf76-0afa26635e89",
+        "password": "34c18fad-ec2f-4e75-aea6-d78e6d45a550",
         "tls": {
             "enabled": true,
             "server_name": "www.bing.com",
@@ -174,11 +183,11 @@
     },
         {
             "type":"tuic",
-            "tag": "tuic_1",
+            "tag": "RN-tuic5",
             "server": "88.88.88.88",
             "server_port": 8443,
-            "uuid": "9b779d79-7091-40bc-bf76-0afa26635e89",
-            "password": "9b779d79-7091-40bc-bf76-0afa26635e89",
+            "uuid": "34c18fad-ec2f-4e75-aea6-d78e6d45a550",
+            "password": "34c18fad-ec2f-4e75-aea6-d78e6d45a550",
             "congestion_control": "bbr",
             "udp_relay_mode": "native",
             "udp_over_stream": false,
@@ -192,7 +201,179 @@
                     "h3"
                 ]
             }
-        },		
+        },
+    {
+      "type": "vless",
+      "tag": "BW-vless",
+      "server": "66.66.66.66",
+      "server_port": 2443,
+      "uuid": "03f32af4-750c-4869-b3a2-ce35592fa744",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+      "reality": {
+          "enabled": true,
+          "public_key": "tTIbe-TH9pGCmUCI8jklnY8LNscaTIk-xYWVbDSD_yQ",
+          "short_id": "73ef4cb6"
+        }
+      }
+    },
+{
+            "server": "66.66.66.66",
+            "server_port": 3443,
+            "tag": "BW-ws",
+            "tls": {
+                "enabled": false,
+                "server_name": "www.bing.com",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "packet_encoding": "packetaddr",
+            "transport": {
+                "headers": {
+                    "Host": [
+                        "www.bing.com"
+                    ]
+                },
+                "path": "03f32af4-750c-4869-b3a2-ce35592fa744-vm",
+                "type": "ws"
+            },
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "03f32af4-750c-4869-b3a2-ce35592fa744"
+        },
+
+    {
+        "type": "hysteria2",
+        "tag": "BW-hy2",
+        "server": "66.66.66.66",
+        "server_port": 9443,
+        "password": "03f32af4-750c-4869-b3a2-ce35592fa744",
+        "tls": {
+            "enabled": true,
+            "server_name": "www.bing.com",
+            "insecure": true,
+            "alpn": [
+                "h3"
+            ]
+        }
+    },
+        {
+            "type":"tuic",
+            "tag": "BW-tuic5",
+            "server": "66.66.66.66",
+            "server_port": 8443,
+            "uuid": "03f32af4-750c-4869-b3a2-ce35592fa744",
+            "password": "03f32af4-750c-4869-b3a2-ce35592fa744",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "udp_over_stream": false,
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls":{
+                "enabled": true,
+                "server_name": "www.bing.com",
+                "insecure": true,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+    {
+      "type": "vless",
+      "tag": "CD-vless",
+      "server": "77.77.77.77",
+      "server_port": 2443,
+      "uuid": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+      "reality": {
+          "enabled": true,
+          "public_key": "hNOGsu1ZgaqWqZsiF65ZDukKdYdLd87i2E8a5mTSeiw",
+          "short_id": "d36a9946"
+        }
+      }
+    },
+{
+            "server": "77.77.77.77",
+            "server_port": 3443,
+            "tag": "CD-ws",
+            "tls": {
+                "enabled": false,
+                "server_name": "www.bing.com",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "packet_encoding": "packetaddr",
+            "transport": {
+                "headers": {
+                    "Host": [
+                        "www.bing.com"
+                    ]
+                },
+                "path": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9-vm",
+                "type": "ws"
+            },
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9"
+        },
+
+    {
+        "type": "hysteria2",
+        "tag": "CD-hy2",
+        "server": "77.77.77.77",
+        "server_port": 9443,
+        "password": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9",
+        "tls": {
+            "enabled": true,
+            "server_name": "www.bing.com",
+            "insecure": true,
+            "alpn": [
+                "h3"
+            ]
+        }
+    },
+        {
+            "type":"tuic",
+            "tag": "CD-tuic5",
+            "server": "77.77.77.77",
+            "server_port": 8443,
+            "uuid": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9",
+            "password": "a2c842d2-e629-4d48-b1ea-d16ccbdc75d9",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "udp_over_stream": false,
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls":{
+                "enabled": true,
+                "server_name": "www.bing.com",
+                "insecure": true,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
     {
       "tag": "direct",
       "type": "direct"
@@ -209,12 +390,20 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "vless_1",
-        "vmess_1",	
-        "hysteria2_1",
-        "tuic_1"	
+        "RN-vless",
+        "RN-ws",
+        "RN-hy2",
+        "RN-tuic5",
+        "CD-vless",
+        "CD-ws",
+        "CD-hy2",
+        "CD-tuic5",
+        "BW-vless",
+        "BW-ws",
+        "BW-hy2",
+        "BW-tuic5"
       ],
-      "url": "https://cp.cloudflare.com/generate_204",
+      "url": "https://www.gstatic.com/generate_204",
       "interval": "1m",
       "tolerance": 50,
       "interrupt_exist_connections": false
