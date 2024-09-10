@@ -41,7 +41,7 @@ service sing-box start
 
 ## 透明代理
 
-透明代理设置，请参阅[pfSense、OPNsense设置http透明代理](https://pfchina.org/?p=10526)。
+透明代理设置，请参阅 [pfSense、OPNsense设置http透明代理](https://pfchina.org/?p=13572)。
 
 <br>
 
