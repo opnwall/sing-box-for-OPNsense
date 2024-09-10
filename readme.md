@@ -4,7 +4,7 @@
 
 - 此项目是通过使用[sing-box](https://github.com/SagerNet/sing-box) 作为核心程序，再结合脚本实现简单的代理功能。
 
-- 由于sing-box在freeBSD平台不提供tun支持，建议使用http或socks协议进行代理配置。
+- 由于sing-box在freeBSD平台不提供tun支持，可以使用http或socks协议进行代理配置。
 
 - 本项目同时支持在pfSesne和OPNsense防火墙中安装使用。
 
