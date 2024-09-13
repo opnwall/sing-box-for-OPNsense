@@ -56,3 +56,25 @@ service sing-box start
 在`API Base URL`一栏中输入：http://\<ip\>:9090 ，在`Secret(optional)`一栏中输入访问密钥。
 
 点击Add并选择刚刚输入的管理界面地址，之后便可在浏览器上查看代理信息。
+
+## 相关文章
+
+[pfSense、OPNsense配置Xray代理教程](https://pfchina.org/?p=13013)
+
+[pfSense、OPNsense配置trojan-go教程](https://pfchina.org/?p=9885)
+
+[pfSense、OPNsense配置v2ray代理教程](https://pfchina.org/?p=4032)
+
+[pfSense、OPNsense配置Clash代理教程](https://pfchina.org/?p=10526)
+
+[pfSense、OPNsense配置hysteria代理教程](https://pfchina.org/?p=9524)
+
+[pfSense、OPNsense配置sing-box代理教程](https://pfchina.org/?p=12933)
+
+[pfSense、OPNsense配置http透明代理教程](https://pfchina.org/?p=13572)
+
+[pfSense、OPNsense配置hysteria2代理教程](https://pfchina.org/?p=13065)
+
+[pfSense、OPNsense配置tun2socks透明代理](https://pfchina.org/?p=13437)
+
+[pfSense、OPNsense配置hysteria(TUN) 透明代理教程](https://pfchina.org/?p=13480)
