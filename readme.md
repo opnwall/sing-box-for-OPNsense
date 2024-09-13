@@ -8,8 +8,6 @@
 
 - 本项目支持在pfSesne和OPNsense防火墙中安装使用。
 
-<br>
-
 ## 使用方法
 
 - 编辑config.json文件，修改出站信息和代理接口地址。
@@ -42,8 +40,6 @@ service sing-box start
 ## 透明代理
 
 透明代理设置，请参阅[pfSense、OPNsense设置http透明代理教程](https://pfchina.org/?p=13572)。
-
-<br>
 
 ## 控制面板
 
