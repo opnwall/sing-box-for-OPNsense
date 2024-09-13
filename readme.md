@@ -35,7 +35,6 @@ service sing-box restart
 ```bash
 service sing-box start
 ```
-<br>
 
 ## 透明代理
 
