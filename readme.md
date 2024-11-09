@@ -40,7 +40,8 @@ service sing-box start
 
 透明代理设置请参阅：
 [pfSense、OPNsense设置http透明代理教程](https://pfchina.org/?p=13572)
-[pfSense、OPNsense配置tun2socks透明代理教程](https://pfchina.org/?p=13437)。
+
+[pfSense、OPNsense配置tun2socks透明代理教程](https://pfchina.org/?p=13437)
 
 ## 控制面板
 
